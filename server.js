@@ -9,7 +9,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -29,5 +28,4 @@ mongoose
     process.exit(1); // Optional: stop app if DB doesn't connect
   });
 
-// Routes
 app.use("/api/contact", contactRoutes);
